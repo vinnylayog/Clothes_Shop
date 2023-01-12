@@ -53,6 +53,7 @@ public class Inventory : MonoBehaviour
             Transform playerTransform = GameManager.Instance.Player.transform;
             GameObject removeItem = Instantiate(DefaultItem, playerTransform.position, Quaternion.identity);
             removeItem.GetComponent<ItemPickup>().OnSpawn(item);
+            removeItem.transform.SetParent(GameManager.Instance.ActorsParent.transform);
         }
 
         items.Remove(item);
