@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05a0d3564bdfc564a87aa1ba62d4c86d, type: 3}
-  m_Name: Test Item
+  m_Script: {fileID: 11500000, guid: 85b5f04bce1059444ba24bcc818cdbfb, type: 3}
+  m_Name: Wizard Hat (Green)
   m_EditorClassIdentifier: 
-  name: Wizard Hat
-  icon: {fileID: 213843013, guid: 0e05129c03375e94ab1b759f817bf509, type: 3}
+  name: Wizard Hat (Green)
+  icon: {fileID: 1351975026, guid: b477f4eb2522fb34f9c4497895601ea3, type: 3}
   isDefaultItem: 0
+  equipSlot: 0
+  moveSpeedModifier: 2

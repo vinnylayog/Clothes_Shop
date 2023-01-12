@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class ItemPickup : Interactable
 {
+    private SpriteRenderer spriteRenderer;
     public Item item;
+
+    private void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     public override void Interact()
     {
@@ -18,5 +24,10 @@ public class ItemPickup : Interactable
 
         if (wasPickedUp)
             Destroy(gameObject);
+    }
+
+    public void OnSpawn()
+    {
+        
     }
 }
