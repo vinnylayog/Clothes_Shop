@@ -1307,6 +1307,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rb: {fileID: 553019113}
+  playerSpriteRenderer: {fileID: 1309289231}
+  myAnimator: {fileID: 1309289232}
+  animationNames:
+  - walk_back
+  - walk_front
+  - walk_side
+  - front_idle
+  facing: 0
 --- !u!224 &557276121 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1135409068218299375, guid: 203780d311224b34492aef9e9523af39, type: 3}
@@ -1500,8 +1508,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 622480453}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.014, y: 0.782, z: 0}
-  m_LocalScale: {x: 1.4069281, y: 1.4069281, z: 1.4069281}
+  m_LocalPosition: {x: -0.014, y: 0.844, z: 0}
+  m_LocalScale: {x: 1.4814953, y: 1.4814953, z: 1.4814953}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 719890220}

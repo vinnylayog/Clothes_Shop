@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public Animator myAnimator;
     public string[] animationNames;
 
-    public Heading facing = 0;
+    public Direction facing = 0;
 
     private void Start()
     {
@@ -46,13 +46,13 @@ public class PlayerController : MonoBehaviour
 
     void HandleAnimation()
     {
-        if (movement.x > 0.0f) facing = Heading.Right;
-        else if (movement.x < 0.0f) facing = Heading.Left;
+        if (movement.x > 0.0f) facing = Direction.Right;
+        else if (movement.x < 0.0f) facing = Direction.Left;
 
-        if (movement.y > 0.0f) facing = Heading.Up;
-        else if (movement.y < 0.0f) facing = Heading.Down;
+        if (movement.y > 0.0f) facing = Direction.Up;
+        else if (movement.y < 0.0f) facing = Direction.Down;
 
-        if (movement == Vector2.zero) facing = Heading.Idle;
+        if (movement == Vector2.zero) facing = Direction.Idle;
 
         switch ((int)facing)
         {
@@ -76,7 +76,9 @@ public class PlayerController : MonoBehaviour
                 myAnimator.Play(animationNames[3]);
                 break;
         }
+
+        EquipmentManager.Instance.UpdateFacing(facing);
     }
 }
 
-public enum Heading { Up, Down, Left, Right, Idle }
+public enum Direction { Up, Down, Left, Right, Idle}

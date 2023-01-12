@@ -7,6 +7,8 @@ public class Equipment : Item
 
     public int moveSpeedModifier;
 
+    public Sprite[] sides;
+
     public override void Use()
     {
         base.Use();

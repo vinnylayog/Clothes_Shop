@@ -76,4 +76,16 @@ public class EquipmentManager : MonoBehaviour
             equippedSprite[slotIndex].equipSpriteRenderer.sprite = null;
         }
     }
+
+    public void UpdateFacing(Direction facing)
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            if (currentEquipment[i] != null)
+            {
+                if (currentEquipment[i].sides.Length > 1)
+                    equippedSprite[i].equipSpriteRenderer.sprite = currentEquipment[i].sides[(int)facing];
+            }
+        }
+    }
 }
