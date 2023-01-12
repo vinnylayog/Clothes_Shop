@@ -26,6 +26,8 @@ public class Inventory : MonoBehaviour
 
     public List<Item> items = new List<Item>();
 
+    public GameObject DefaultItem;
+
     public bool Add(Item item)
     {
         if (!item.isDefaultItem)
@@ -44,8 +46,15 @@ public class Inventory : MonoBehaviour
         return true;
     }
 
-    public void Remove(Item item)
+    public void Remove(Item item, bool drop)
     {
+        if (drop)
+        {
+            Transform playerTransform = GameManager.Instance.Player.transform;
+            GameObject removeItem = Instantiate(DefaultItem, playerTransform.position, Quaternion.identity);
+            removeItem.GetComponent<ItemPickup>().OnSpawn(item);
+        }
+
         items.Remove(item);
 
         if (onItemChangedCallback != null)

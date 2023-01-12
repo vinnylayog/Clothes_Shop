@@ -7,6 +7,8 @@ public class Item : ScriptableObject
     public Sprite icon = null;
     public bool isDefaultItem = false;
 
+    public Vector2 OverworldDimensions;
+
     public virtual void Use()
     {
         // Use the item
@@ -16,6 +18,6 @@ public class Item : ScriptableObject
 
     public void RemoveFromInventory()
     {
-        Inventory.Instance.Remove(this);
+        Inventory.Instance.Remove(this, false);
     }
 }

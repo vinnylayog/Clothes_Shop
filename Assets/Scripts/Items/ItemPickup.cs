@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class ItemPickup : Interactable
 {
-    private SpriteRenderer spriteRenderer;
+    private SpriteRenderer mySpriteRenderer;
     public Item item;
 
     private void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        mySpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public override void Interact()
@@ -26,8 +26,10 @@ public class ItemPickup : Interactable
             Destroy(gameObject);
     }
 
-    public void OnSpawn()
+    public void OnSpawn(Item newItem)
     {
-        
+        item = newItem;
+        mySpriteRenderer = GetComponent<SpriteRenderer>();
+        mySpriteRenderer.sprite = item.icon;
     }
 }
