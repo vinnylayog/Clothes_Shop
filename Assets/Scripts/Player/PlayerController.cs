@@ -5,18 +5,18 @@ public class PlayerController : MonoBehaviour
     Camera cam;
 
     [SerializeField]
-    private Interactable focus;
-
-    [SerializeField]
     private float moveSpeed = 5.0f;
     [SerializeField]
     private Rigidbody2D rb;
 
     Vector2 movement;
 
+    Animator myAnimator;
+
     private void Start()
     {
         cam = Camera.main;
+        myAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
