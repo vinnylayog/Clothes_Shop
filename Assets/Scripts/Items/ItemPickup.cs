@@ -31,5 +31,6 @@ public class ItemPickup : Interactable
         item = newItem;
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         mySpriteRenderer.sprite = item.icon;
+        gameObject.name = item.name;
     }
 }
