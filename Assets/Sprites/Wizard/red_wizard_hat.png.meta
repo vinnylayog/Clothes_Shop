@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -66,7 +66,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -107,10 +107,10 @@ TextureImporter:
       name: red_wizard_hat_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 333
-        width: 165
-        height: 119
+        x: 73
+        y: 662
+        width: 379
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,10 +128,10 @@ TextureImporter:
       name: red_wizard_hat_1
       rect:
         serializedVersion: 2
-        x: 276
-        y: 337
-        width: 160
-        height: 115
+        x: 616
+        y: 670
+        width: 369
+        height: 237
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,10 +149,10 @@ TextureImporter:
       name: red_wizard_hat_2
       rect:
         serializedVersion: 2
-        x: 41
-        y: 79
-        width: 158
-        height: 117
+        x: 90
+        y: 155
+        width: 359
+        height: 238
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,10 +170,10 @@ TextureImporter:
       name: red_wizard_hat_3
       rect:
         serializedVersion: 2
-        x: 257
-        y: 78
-        width: 165
-        height: 130
+        x: 574
+        y: 151
+        width: 379
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

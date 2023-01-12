@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -66,7 +66,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -107,10 +107,10 @@ TextureImporter:
       name: wizard_hat_only_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 333
-        width: 165
-        height: 119
+        x: 74
+        y: 663
+        width: 377
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,10 +128,10 @@ TextureImporter:
       name: wizard_hat_only_1
       rect:
         serializedVersion: 2
-        x: 276
-        y: 337
-        width: 160
-        height: 115
+        x: 618
+        y: 671
+        width: 366
+        height: 234
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,10 +149,10 @@ TextureImporter:
       name: wizard_hat_only_2
       rect:
         serializedVersion: 2
-        x: 41
-        y: 79
-        width: 158
-        height: 117
+        x: 823
+        y: 411
+        width: 4
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,10 +170,10 @@ TextureImporter:
       name: wizard_hat_only_3
       rect:
         serializedVersion: 2
-        x: 257
-        y: 78
-        width: 165
-        height: 130
+        x: 91
+        y: 156
+        width: 358
+        height: 237
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,6 +183,48 @@ TextureImporter:
       bones: []
       spriteID: 33d0404e31e66874497eb673e5a348ad
       internalID: -1484626562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wizard_hat_only_4
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 154
+        width: 377
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb802fcc398bc9748b32bdf4eddab9f5
+      internalID: 622042982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wizard_hat_only_5
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 390
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c98279edf7b040d49b827fc67ef0e635
+      internalID: 157824529
       vertices: []
       indices: 
       edges: []
@@ -200,8 +242,10 @@ TextureImporter:
     nameFileIdTable:
       wizard_hat_only_0: 1132678348
       wizard_hat_only_3: -1484626562
+      wizard_hat_only_5: 157824529
       wizard_hat_only_1: 213843013
       wizard_hat_only_2: -383004461
+      wizard_hat_only_4: 622042982
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
