@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05a0d3564bdfc564a87aa1ba62d4c86d, type: 3}
   m_Name: Test Item
   m_EditorClassIdentifier: 
-  name: Silly Hat
-  icon: {fileID: 0}
+  name: Wizard Hat
+  icon: {fileID: 213843013, guid: 0e05129c03375e94ab1b759f817bf509, type: 3}
   isDefaultItem: 0
