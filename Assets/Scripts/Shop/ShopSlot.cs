@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ShopSlot : MonoBehaviour
 {
@@ -10,10 +11,31 @@ public class ShopSlot : MonoBehaviour
     Item item;
 
     InventoryManager myInventoryManager;
+    GoldManager myGoldManager;
+    ShopManager myShopManager;
+
+    public int priceOfItem = 10;
+    public TMP_Text priceDisplay;
 
     private void Start()
     {
         myInventoryManager = InventoryManager.Instance;
+        myGoldManager = GoldManager.Instance;
+        myShopManager = ShopManager.Instance;
+        //priceDisplay.text = item.goldValue.ToString();
+        //icon.sprite = item.icon;
+    }
+
+    public void SetUpSlot(Item newItem)
+    {
+        item = newItem;
+        icon.sprite = item.icon;
+        priceOfItem = item.goldValue;
+    }
+
+    public void AttemptBuy()
+    {
+        myShopManager.ConfirmBuy(item, this);
     }
 
     public void BuyItem()
@@ -24,9 +46,15 @@ public class ShopSlot : MonoBehaviour
             Debug.Log("Not enough space.");
             return;
         }
-        //Check if gold is enough
-        //Ch
 
-        //myInventory.Add()
+        //Check if player has enough gold
+        if (!myGoldManager.SubGold(priceOfItem))
+        {
+            Debug.Log("Not enough Gold.");
+            return;
+        }
+
+        myInventoryManager.Add(item);
+        Debug.Log("You bought a " + item.name + "!");
     }
 }

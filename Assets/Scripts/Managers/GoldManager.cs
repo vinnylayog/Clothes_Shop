@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GoldManager : MonoBehaviour
 {
@@ -13,15 +14,34 @@ public class GoldManager : MonoBehaviour
     }
     #endregion
 
-    // Start is called before the first frame update
-    void Start()
+    public TMP_Text goldDisplay;
+
+    [SerializeField]
+    private int playerGold;
+
+    public void AddGold(int addGold)
     {
-        
+        playerGold += addGold;
+        UpdateGoldDisplay();
     }
 
-    // Update is called once per frame
-    void Update()
+    public bool SubGold(int subGold)
     {
-        
+        if((playerGold - subGold) < 0)
+        {
+            Debug.Log("Not enough Gold.");
+            return false;
+        }
+
+        playerGold -= subGold;
+        UpdateGoldDisplay();
+
+        return true;
     }
+
+    private void UpdateGoldDisplay()
+    {
+        goldDisplay.text = playerGold.ToString();
+    }
+
 }

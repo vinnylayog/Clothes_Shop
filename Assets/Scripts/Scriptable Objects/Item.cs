@@ -9,6 +9,8 @@ public class Item : ScriptableObject
 
     public Vector2 OverworldDimensions;
 
+    public int goldValue = 10;
+
     public virtual void Use()
     {
         // Use the item
