@@ -17,15 +17,18 @@ public class InventoryUI : MonoBehaviour
         myInventory.onItemChangedCallback += UpdateUI;
 
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+
+        inventoryUI.SetActive(true);
+        inventoryUI.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Inventory"))
-        {
-            OpenCloseInventory();
-        }
+        //if (Input.GetButtonDown("Inventory"))
+        //{
+        //    OpenCloseInventory();
+        //}
     }
 
     public void OpenCloseInventory()

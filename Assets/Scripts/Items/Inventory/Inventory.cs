@@ -19,6 +19,8 @@ public class Inventory : MonoBehaviour
 
     #endregion
 
+    public InventoryUI myInventoryUI;
+
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
 

@@ -25,6 +25,8 @@ public class EquipmentManager : MonoBehaviour
 
     Inventory myInventory;
 
+    private int direction;
+
     private void Start()
     {
         myInventory = Inventory.Instance;
@@ -55,7 +57,7 @@ public class EquipmentManager : MonoBehaviour
 
         currentEquipment[slotIndex] = newItem;
         equipmentSlots[slotIndex].AddEquip(newItem);
-        equippedSprite[slotIndex].equipSpriteRenderer.sprite = newItem.icon;
+        equippedSprite[slotIndex].equipSpriteRenderer.sprite = currentEquipment[slotIndex].sides[direction];
     }
 
     public void Unequip(int slotIndex)
@@ -77,14 +79,17 @@ public class EquipmentManager : MonoBehaviour
         }
     }
 
-    public void UpdateFacing(Direction facing)
+    public void UpdateFacing(int facing)
     {
+        direction = facing;
         for (int i = 0; i < 5; i++)
         {
             if (currentEquipment[i] != null)
             {
                 if (currentEquipment[i].sides.Length > 1)
-                    equippedSprite[i].equipSpriteRenderer.sprite = currentEquipment[i].sides[(int)facing];
+                {
+                    equippedSprite[i].equipSpriteRenderer.sprite = currentEquipment[i].sides[direction];
+                }
             }
         }
     }

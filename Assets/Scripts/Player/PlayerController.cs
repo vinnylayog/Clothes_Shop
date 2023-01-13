@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    Camera cam;
-
     [SerializeField]
     private float moveSpeed = 5.0f;
     [SerializeField]
@@ -20,21 +18,12 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        cam = Camera.main;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Move player based on Input
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-        movement.Normalize();
-
-        //On right click
-        if (Input.GetMouseButtonDown(1))
-        {
-        }
+        HandleMovement();
     }
 
     private void FixedUpdate()
@@ -44,41 +33,69 @@ public class PlayerController : MonoBehaviour
         HandleAnimation();
     }
 
+    private void HandleMovement()
+    {
+        //Move player based on Input
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+        movement.Normalize();
+    }
+
     void HandleAnimation()
     {
-        if (movement.x > 0.0f) facing = Direction.Right;
-        else if (movement.x < 0.0f) facing = Direction.Left;
-
-        if (movement.y > 0.0f) facing = Direction.Up;
-        else if (movement.y < 0.0f) facing = Direction.Down;
-
-        if (movement == Vector2.zero) facing = Direction.Idle;
-
-        switch ((int)facing)
+        if (movement.x > 0.0f)
         {
-            default:
-                break;
-            case 0:
-                myAnimator.Play(animationNames[0]);
-                break;
-            case 1:
-                myAnimator.Play(animationNames[1]);
-                break;
-            case 2:
-                playerSpriteRenderer.flipX = true;
-                myAnimator.Play(animationNames[2]);
-                break;
-            case 3:
-                playerSpriteRenderer.flipX = false;
-                myAnimator.Play(animationNames[2]);
-                break;
-            case 4:
-                myAnimator.Play(animationNames[3]);
-                break;
+            playerSpriteRenderer.flipX = false;
+            facing = Direction.Right;
+        }
+        else if (movement.x < 0.0f) 
+        {
+            playerSpriteRenderer.flipX = true;
+            facing = Direction.Left;
         }
 
-        EquipmentManager.Instance.UpdateFacing(facing);
+        if (movement.y > 0.0f)
+        {
+            playerSpriteRenderer.flipX = false;
+            facing = Direction.Up;
+        }
+        else if (movement.y < 0.0f)
+        {
+            playerSpriteRenderer.flipX = false;
+            facing = Direction.Down;
+        }
+
+        if (movement == Vector2.zero)
+        {
+            switch (facing)
+            {
+                default:
+                    break;
+                case Direction.Up:
+                    playerSpriteRenderer.flipX = false;
+                    facing = Direction.UpIdle;
+                    break;
+                case Direction.Down:
+                    playerSpriteRenderer.flipX = false;
+                    facing = Direction.DownIdle;
+                    break;
+                case Direction.Left:
+                    playerSpriteRenderer.flipX = true;
+                    facing = Direction.LeftIdle;
+                    break;
+                case Direction.Right:
+                    playerSpriteRenderer.flipX = false;
+                    facing = Direction.RightIdle;
+                    break;
+            }
+        }
+
+        myAnimator.Play(animationNames[(int)facing]);
+
+        int direction = (int)facing;
+        if (direction > 3) direction -= 4;
+        EquipmentManager.Instance.UpdateFacing(direction);
     }
 }
 
-public enum Direction { Up, Down, Left, Right, Idle}
+public enum Direction { Up, Down, Left, Right, UpIdle, DownIdle, LeftIdle, RightIdle}

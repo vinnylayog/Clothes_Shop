@@ -19,16 +19,25 @@ public class GameManager : MonoBehaviour
     public GameObject ActorsParent;
     public GameObject EnvironmentParent;
 
+    Inventory myInventory;
+
     // Start is called before the first frame update
     void Start()
     {
-        if(Player == null)
+        myInventory = Inventory.Instance;
+
+        if (Player == null) 
+        {
             Player = GameObject.FindGameObjectWithTag("Player");
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButtonDown("Inventory"))
+        {
+            myInventory.myInventoryUI.OpenCloseInventory();
+        }
     }
 }
