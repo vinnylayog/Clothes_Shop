@@ -21,5 +21,10 @@ public class ShopPanel : MonoBehaviour
         {
             ShopManager.Instance.OpenCloseShop();
         }
+
+        if (Input.GetButtonDown("Inventory"))
+        {
+            ShopManager.Instance.OpenCloseShop();
+        }
     }
 }

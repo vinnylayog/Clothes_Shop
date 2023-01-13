@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ItemPickup : Interactable
 {
-    private SpriteRenderer mySpriteRenderer;
+    public SpriteRenderer mySpriteRenderer;
     public Item item;
 
     InventoryManager myInventoryManager;
@@ -10,9 +10,10 @@ public class ItemPickup : Interactable
 
     private void Start()
     {
-        mySpriteRenderer = GetComponent<SpriteRenderer>();
         myInventoryManager = InventoryManager.Instance;
         myNotificationManager = NotificationManager.Instance;
+
+        if (item != null) OnSpawn(item);
     }
 
     public override void Interact()
@@ -24,17 +25,18 @@ public class ItemPickup : Interactable
 
     void PickUp()
     {
-        myNotificationManager.ShowNotification("You picked up a " + item.name + ".", Color.green);
         bool wasPickedUp = myInventoryManager.Add(item);
 
         if (wasPickedUp)
+        {
+            if (!item.isDefaultItem) myNotificationManager.ShowNotification("You picked up a " + item.name + ".", Color.white);
             Destroy(gameObject);
+        }
     }
 
     public void OnSpawn(Item newItem)
     {
         item = newItem;
-        mySpriteRenderer = GetComponent<SpriteRenderer>();
         mySpriteRenderer.sprite = item.icon;
         gameObject.name = item.name;
     }

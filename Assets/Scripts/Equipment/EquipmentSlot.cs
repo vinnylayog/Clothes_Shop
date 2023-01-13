@@ -10,6 +10,7 @@ public class EquipmentSlot : MonoBehaviour
 
     Equipment equip;
 
+    //Adds Equipment data to the Equipment Slot Display
     public void AddEquip(Equipment newEquip)
     {
         equip = newEquip;
@@ -20,6 +21,7 @@ public class EquipmentSlot : MonoBehaviour
         removeButton.interactable = true;
     }
 
+    //Clears the data in Equipment Slot
     public void ClearSlot()
     {
         equip = null;
@@ -30,6 +32,7 @@ public class EquipmentSlot : MonoBehaviour
         removeButton.interactable = false;
     }
 
+    //Unequips the Equipment
     public void OnRemoveButton()
     {
         EquipmentManager.Instance.Unequip((int)equip.equipIndex);

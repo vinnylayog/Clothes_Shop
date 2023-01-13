@@ -7,13 +7,14 @@ public class InventoryUI : MonoBehaviour
     public Transform itemsParent;
 
     InventoryManager myInventoryManager;
+    ShopManager myShopManager;
 
     InventorySlot[] slots;
 
-    // Start is called before the first frame update
     void Start()
     {
         myInventoryManager = InventoryManager.Instance;
+        myShopManager = ShopManager.Instance;
         myInventoryManager.onItemChangedCallback += UpdateUI;
 
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
@@ -22,7 +23,6 @@ public class InventoryUI : MonoBehaviour
         inventoryUI.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Inventory"))
@@ -34,12 +34,16 @@ public class InventoryUI : MonoBehaviour
     public void OpenCloseInventory()
     {
         inventoryUI.SetActive(!inventoryUI.activeSelf);
-        //inventoryButton.SetActive(!inventoryButton.activeSelf);
     }
 
     public void OpenCloseInventory(bool open)
     {
         inventoryUI.SetActive(open);
+        foreach (InventorySlot slot in slots)
+        {
+            if(slot.item != null)
+                slot.sellPriceBox.SetActive(open);
+        }
     }
 
     void UpdateUI()

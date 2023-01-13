@@ -19,6 +19,8 @@ public class InventoryManager : MonoBehaviour
 
     #endregion
 
+    NotificationManager myNotificationManager;
+
     public InventoryUI myInventoryUI;
 
     public delegate void OnItemChanged();
@@ -30,17 +32,28 @@ public class InventoryManager : MonoBehaviour
 
     public GameObject DefaultItem;
 
+    private void Start()
+    {
+        myNotificationManager = NotificationManager.Instance;
+    }
+
+    //Add Item to Inventory List
     public bool Add(Item item)
     {
+        //Check if Item is Default Item (Generic item with no data)
         if (!item.isDefaultItem)
         {
+            //Check if the Inventory is full
             if (items.Count >= inventorySpace)
             {
-                Debug.Log("Not enough room.");
+                myNotificationManager.ShowNotification("Not enough space in your inventory!", Color.red);
                 return false;
             }
+
+            //Adds Item to Inventory List
             items.Add(item);
 
+            //Invoke Item Changed Callback to update Inventory UI
             if(onItemChangedCallback != null)
                 onItemChangedCallback.Invoke();
         }
@@ -48,18 +61,26 @@ public class InventoryManager : MonoBehaviour
         return true;
     }
 
+    //Remove Item from Inventory List
     public void Remove(Item item, bool drop)
     {
+        //Check if Item will be dropped on the floor / overworld
         if (drop)
         {
             Transform playerTransform = GameManager.Instance.Player.transform;
-            GameObject removeItem = Instantiate(DefaultItem, playerTransform.position, Quaternion.identity);
-            removeItem.GetComponent<ItemPickup>().OnSpawn(item);
+
+            //Spawn a Default Item object
+            ItemPickup removeItem = Instantiate(DefaultItem, playerTransform.position, Quaternion.identity).GetComponent<ItemPickup>();
+            //Set parent of newly spawned item as Actors Parent (for cleanliness in Hierarchy)
             removeItem.transform.SetParent(GameManager.Instance.ActorsParent.transform);
+            //Initialize Default Item with data of Item
+            removeItem.OnSpawn(item);
         }
 
+        //Removes Item from Inventory List
         items.Remove(item);
 
+        //Invoke Item Changed Callback to update Inventory UI
         if (onItemChangedCallback != null)
             onItemChangedCallback.Invoke();
     }

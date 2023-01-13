@@ -38,6 +38,7 @@ public class ShopSlot : MonoBehaviour
 
     public void AttemptBuy()
     {
+        print("Attempting to buy");
         if(!myShopManager.confirmPanel.gameObject.activeSelf)
             myShopManager.ConfirmBuy(item, this);
     }
@@ -58,6 +59,7 @@ public class ShopSlot : MonoBehaviour
             return;
         }
 
+        myNotificationManager.ShowNotification("You bought a " + item.name + ".", Color.red);
         myInventoryManager.Add(item);
     }
 }

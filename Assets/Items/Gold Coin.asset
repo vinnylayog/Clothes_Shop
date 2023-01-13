@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Gold Coin
   icon: {fileID: 21300000, guid: a225bbfb86791f144bd643abde217e5c, type: 3}
-  isDefaultItem: 1
+  isDefaultItem: 0
   OverworldDimensions: {x: 0, y: 0}
   goldValue: 10
   equipIndex: 0
