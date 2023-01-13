@@ -20,6 +20,6 @@ MonoBehaviour:
   moveSpeedModifier: 2
   sides:
   - {fileID: 1351975026, guid: b477f4eb2522fb34f9c4497895601ea3, type: 3}
+  - {fileID: 1274052360, guid: b477f4eb2522fb34f9c4497895601ea3, type: 3}
   - {fileID: -828347866, guid: b477f4eb2522fb34f9c4497895601ea3, type: 3}
-  - {fileID: 326264819, guid: b477f4eb2522fb34f9c4497895601ea3, type: 3}
   - {fileID: 1992603961, guid: b477f4eb2522fb34f9c4497895601ea3, type: 3}

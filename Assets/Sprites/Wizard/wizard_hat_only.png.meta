@@ -149,10 +149,10 @@ TextureImporter:
       name: wizard_hat_only_2
       rect:
         serializedVersion: 2
-        x: 823
-        y: 411
-        width: 4
-        height: 6
+        x: 91
+        y: 156
+        width: 358
+        height: 237
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,27 +170,6 @@ TextureImporter:
       name: wizard_hat_only_3
       rect:
         serializedVersion: 2
-        x: 91
-        y: 156
-        width: 358
-        height: 237
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 33d0404e31e66874497eb673e5a348ad
-      internalID: -1484626562
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wizard_hat_only_4
-      rect:
-        serializedVersion: 2
         x: 575
         y: 154
         width: 377
@@ -202,29 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb802fcc398bc9748b32bdf4eddab9f5
-      internalID: 622042982
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wizard_hat_only_5
-      rect:
-        serializedVersion: 2
-        x: 770
-        y: 390
-        width: 8
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c98279edf7b040d49b827fc67ef0e635
-      internalID: 157824529
+      spriteID: 33d0404e31e66874497eb673e5a348ad
+      internalID: -1484626562
       vertices: []
       indices: 
       edges: []
@@ -242,10 +200,8 @@ TextureImporter:
     nameFileIdTable:
       wizard_hat_only_0: 1132678348
       wizard_hat_only_3: -1484626562
-      wizard_hat_only_5: 157824529
       wizard_hat_only_1: 213843013
       wizard_hat_only_2: -383004461
-      wizard_hat_only_4: 622042982
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

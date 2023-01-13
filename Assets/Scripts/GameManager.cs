@@ -13,31 +13,29 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    public float loadDelay;
+
     public GameObject Player;
 
     public GameObject ManagersParent;
     public GameObject ActorsParent;
     public GameObject EnvironmentParent;
 
-    Inventory myInventory;
-
     // Start is called before the first frame update
     void Start()
     {
-        myInventory = Inventory.Instance;
-
         if (Player == null) 
         {
             Player = GameObject.FindGameObjectWithTag("Player");
         }
+
+        StartCoroutine(DelayLoading());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator DelayLoading()
     {
-        if (Input.GetButtonDown("Inventory"))
-        {
-            myInventory.myInventoryUI.OpenCloseInventory();
-        }
+        yield return new WaitForSeconds(loadDelay);
+
+        Fader.Instance.FadeToBlack(false);
     }
 }

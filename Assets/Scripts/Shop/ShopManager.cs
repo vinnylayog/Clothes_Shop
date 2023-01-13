@@ -31,5 +31,6 @@ public class ShopManager : MonoBehaviour
     public void OpenCloseShop()
     {
         ShopPanel.SetActive(!ShopPanel.activeSelf);
+        Inventory.Instance.myInventoryUI.OpenCloseInventory(ShopPanel.activeSelf);
     }
 }

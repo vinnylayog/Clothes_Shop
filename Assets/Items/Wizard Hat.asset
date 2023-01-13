@@ -15,5 +15,11 @@ MonoBehaviour:
   name: Wizard Hat
   icon: {fileID: 213843013, guid: 0e05129c03375e94ab1b759f817bf509, type: 3}
   isDefaultItem: 0
-  equipSlot: 0
+  OverworldDimensions: {x: 0, y: 0}
+  equipIndex: 0
   moveSpeedModifier: 1
+  sides:
+  - {fileID: 213843013, guid: 0e05129c03375e94ab1b759f817bf509, type: 3}
+  - {fileID: -383004461, guid: 0e05129c03375e94ab1b759f817bf509, type: 3}
+  - {fileID: -1484626562, guid: 0e05129c03375e94ab1b759f817bf509, type: 3}
+  - {fileID: 1132678348, guid: 0e05129c03375e94ab1b759f817bf509, type: 3}

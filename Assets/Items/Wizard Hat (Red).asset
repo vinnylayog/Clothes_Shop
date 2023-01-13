@@ -18,3 +18,8 @@ MonoBehaviour:
   OverworldDimensions: {x: 0, y: 0}
   equipIndex: 0
   moveSpeedModifier: 1
+  sides:
+  - {fileID: -519245918, guid: 6d43dd12a99dd034e895826e5e095928, type: 3}
+  - {fileID: -214411225, guid: 6d43dd12a99dd034e895826e5e095928, type: 3}
+  - {fileID: -133670051, guid: 6d43dd12a99dd034e895826e5e095928, type: 3}
+  - {fileID: 1797754867, guid: 6d43dd12a99dd034e895826e5e095928, type: 3}

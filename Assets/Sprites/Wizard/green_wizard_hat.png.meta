@@ -146,34 +146,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_wizard_hat_2
-      rect:
-        serializedVersion: 2
-        x: 823
-        y: 411
-        width: 4
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4eef65c2276eb834787d7679d923d662
-      internalID: 1274052360
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: green_wizard_hat_3
       rect:
         serializedVersion: 2
-        x: 91
-        y: 156
-        width: 358
-        height: 237
+        x: 575
+        y: 154
+        width: 377
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,13 +167,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: green_wizard_hat_4
+      name: green_wizard_hat_2
       rect:
         serializedVersion: 2
-        x: 575
-        y: 154
-        width: 377
-        height: 240
+        x: 91
+        y: 156
+        width: 358
+        height: 237
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,29 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23aa29d596841bf4e9754ff86bee1f3f
-      internalID: 326264819
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: green_wizard_hat_5
-      rect:
-        serializedVersion: 2
-        x: 770
-        y: 390
-        width: 8
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 038a692914ff4c64a9bf41bd93c6e597
-      internalID: -2096288126
+      spriteID: 983e8fb0067edfc4892e0ac0dba959ef
+      internalID: 1274052360
       vertices: []
       indices: 
       edges: []
@@ -241,10 +199,8 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       green_wizard_hat_0: 1992603961
-      green_wizard_hat_4: 326264819
       green_wizard_hat_3: -828347866
       green_wizard_hat_2: 1274052360
-      green_wizard_hat_5: -2096288126
       green_wizard_hat_1: 1351975026
   spritePackingTag: 
   pSDRemoveMatte: 0
