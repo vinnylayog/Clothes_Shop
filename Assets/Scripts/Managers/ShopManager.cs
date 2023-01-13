@@ -13,11 +13,14 @@ public class ShopManager : MonoBehaviour
     }
     #endregion
 
+    InventoryManager myInventoryManager;
+
     public GameObject ShopPanel;
 
     // Start is called before the first frame update
     void Start()
     {
+        myInventoryManager = InventoryManager.Instance;
         ShopPanel.SetActive(true);
         ShopPanel.SetActive(false);
     }
@@ -31,6 +34,6 @@ public class ShopManager : MonoBehaviour
     public void OpenCloseShop()
     {
         ShopPanel.SetActive(!ShopPanel.activeSelf);
-        Inventory.Instance.myInventoryUI.OpenCloseInventory(ShopPanel.activeSelf);
+        myInventoryManager.myInventoryUI.OpenCloseInventory(ShopPanel.activeSelf);
     }
 }

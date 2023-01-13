@@ -23,13 +23,13 @@ public class EquipmentManager : MonoBehaviour
     public Transform equipmentParent;
     public Transform equipmentDisplayParent;
 
-    Inventory myInventory;
+    InventoryManager myInventoryManager;
 
     private int direction;
 
     private void Start()
     {
-        myInventory = Inventory.Instance;
+        myInventoryManager = InventoryManager.Instance;
 
         int numSlots = System.Enum.GetNames(typeof(EquipmentIndex)).Length;
         currentEquipment = new Equipment[numSlots];
@@ -47,7 +47,7 @@ public class EquipmentManager : MonoBehaviour
         if (currentEquipment[slotIndex] != null)
         {
             oldItem = currentEquipment[slotIndex];
-            myInventory.Add(oldItem);
+            myInventoryManager.Add(oldItem);
         }
 
         if (onEquipmentChanged != null)
@@ -65,7 +65,7 @@ public class EquipmentManager : MonoBehaviour
         if (currentEquipment[slotIndex] != null)
         {
             Equipment oldItem = currentEquipment[slotIndex];
-            Inventory.Instance.Add(oldItem);
+            InventoryManager.Instance.Add(oldItem);
 
             currentEquipment[slotIndex] = null;
             equipmentSlots[slotIndex].ClearSlot();

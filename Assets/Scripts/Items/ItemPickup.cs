@@ -5,9 +5,12 @@ public class ItemPickup : Interactable
     private SpriteRenderer mySpriteRenderer;
     public Item item;
 
+    InventoryManager myInventoryManager;
+
     private void Start()
     {
         mySpriteRenderer = GetComponent<SpriteRenderer>();
+        myInventoryManager = InventoryManager.Instance;
     }
 
     public override void Interact()
@@ -20,7 +23,7 @@ public class ItemPickup : Interactable
     void PickUp()
     {
         Debug.Log("Picking up " + item.name);
-        bool wasPickedUp = Inventory.Instance.Add(item);
+        bool wasPickedUp = myInventoryManager.Add(item);
 
         if (wasPickedUp)
             Destroy(gameObject);

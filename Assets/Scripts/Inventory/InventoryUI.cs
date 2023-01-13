@@ -6,15 +6,15 @@ public class InventoryUI : MonoBehaviour
     public GameObject inventoryButton;
     public Transform itemsParent;
 
-    Inventory myInventory;
+    InventoryManager myInventoryManager;
 
     InventorySlot[] slots;
 
     // Start is called before the first frame update
     void Start()
     {
-        myInventory = Inventory.Instance;
-        myInventory.onItemChangedCallback += UpdateUI;
+        myInventoryManager = InventoryManager.Instance;
+        myInventoryManager.onItemChangedCallback += UpdateUI;
 
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
 
@@ -46,9 +46,9 @@ public class InventoryUI : MonoBehaviour
     {
         for (int i = 0; i < slots.Length; i++)
         {
-            if (i < myInventory.items.Count)
+            if (i < myInventoryManager.items.Count)
             {
-                slots[i].AddItem(myInventory.items[i]);
+                slots[i].AddItem(myInventoryManager.items[i]);
             }
             else
             {

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+public class InventoryManager : MonoBehaviour
 {
     #region Singleton
-    public static Inventory Instance;
+    public static InventoryManager Instance;
 
     private void Awake()
     {
@@ -24,7 +24,7 @@ public class Inventory : MonoBehaviour
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
 
-    public int inventorySpace = 20;
+    public int inventorySpace = 16;
 
     public List<Item> items = new List<Item>();
 
