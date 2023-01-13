@@ -9,10 +9,14 @@ public class InventorySlot : MonoBehaviour
     Item item;
 
     InventoryManager myInventoryManager;
+    ShopManager myShopManager;
+    GoldManager myGoldmanager;
 
     private void Start()
     {
         myInventoryManager = InventoryManager.Instance;
+        myShopManager = ShopManager.Instance;
+        myGoldmanager = GoldManager.Instance;
     }
 
     public void AddItem(Item newItem)
@@ -44,7 +48,22 @@ public class InventorySlot : MonoBehaviour
     {
         if (item != null)
         {
-            item.Use();
+            if (myShopManager.ShopPanel.gameObject.activeSelf)
+            {
+                if (!myShopManager.confirmPanel.gameObject.activeSelf)
+                    myShopManager.ConfirmSell(item, this);
+            }
+            else
+            {
+                item.Use();
+            }
         }
+    }
+
+    public void SellItem()
+    {
+        int sellValue = (int)(item.goldValue * myShopManager.SellValueMultiplier);
+        myGoldmanager.AddGold(sellValue);
+        myInventoryManager.Remove(item, false);
     }
 }

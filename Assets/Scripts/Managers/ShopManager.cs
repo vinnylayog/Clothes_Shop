@@ -20,14 +20,14 @@ public class ShopManager : MonoBehaviour
     public List<Item> shopItems;
 
     public GameObject ShopSlotPrefab;
-    public ConfirmPurchase confirmPurchase;
+    public ConfirmPanel confirmPanel;
+
+    public float SellValueMultiplier = 0.9f;
 
     // Start is called before the first frame update
     void Start()
     {
         myInventoryManager = InventoryManager.Instance;
-        //ShopPanel.SetActive(true);
-        //ShopPanel.SetActive(false);
 
         InitializeShop();
     }
@@ -38,7 +38,6 @@ public class ShopManager : MonoBehaviour
         {
             if (item != null)
             {
-                Debug.Log("Adding " + item.name + " to shop.");
                 ShopSlot newShopSlot = Instantiate(ShopSlotPrefab).GetComponent<ShopSlot>();
                 newShopSlot.transform.SetParent(ShopParent, false);
                 newShopSlot.SetUpSlot(item);
@@ -46,11 +45,20 @@ public class ShopManager : MonoBehaviour
         }
     }
 
+    public void ConfirmSell(Item item, InventorySlot inventorySlot)
+    {
+        confirmPanel.targetSell = inventorySlot;
+        confirmPanel.buyOrSell = TransactionType.Sell;
+        confirmPanel.ConfirmText.text = "Sell " + item.name + " for " + ((int)(item.goldValue * SellValueMultiplier)).ToString() + " Gold?";
+        confirmPanel.gameObject.SetActive(true);
+    }
+
     public void ConfirmBuy(Item item, ShopSlot shopSlot)
     {
-        confirmPurchase.targetPurchase = shopSlot;
-        confirmPurchase.ConfirmText.text = "Buy " + item.name + " for " + item.goldValue + " Gold?";
-        confirmPurchase.gameObject.SetActive(true);
+        confirmPanel.targetPurchase = shopSlot;
+        confirmPanel.buyOrSell = TransactionType.Buy;
+        confirmPanel.ConfirmText.text = "Buy " + item.name + " for " + item.goldValue + " Gold?";
+        confirmPanel.gameObject.SetActive(true);
     }
 
     public void OpenCloseShop()

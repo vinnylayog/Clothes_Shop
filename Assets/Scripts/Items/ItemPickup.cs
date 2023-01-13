@@ -6,11 +6,13 @@ public class ItemPickup : Interactable
     public Item item;
 
     InventoryManager myInventoryManager;
+    NotificationManager myNotificationManager;
 
     private void Start()
     {
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         myInventoryManager = InventoryManager.Instance;
+        myNotificationManager = NotificationManager.Instance;
     }
 
     public override void Interact()
@@ -22,7 +24,7 @@ public class ItemPickup : Interactable
 
     void PickUp()
     {
-        Debug.Log("Picking up " + item.name);
+        myNotificationManager.ShowNotification("You picked up a " + item.name + ".", Color.green);
         bool wasPickedUp = myInventoryManager.Add(item);
 
         if (wasPickedUp)

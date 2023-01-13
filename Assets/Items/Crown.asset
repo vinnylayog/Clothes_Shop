@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b5f04bce1059444ba24bcc818cdbfb, type: 3}
+  m_Name: Crown
+  m_EditorClassIdentifier: 
+  name: Crown
+  icon: {fileID: 942194942, guid: e6ac819405bd9404797d3e9950282f5b, type: 3}
+  isDefaultItem: 0
+  OverworldDimensions: {x: 0, y: 0}
+  goldValue: 10
+  equipIndex: 0
+  moveSpeedModifier: 1
+  sides:
+  - {fileID: 942194942, guid: e6ac819405bd9404797d3e9950282f5b, type: 3}
+  - {fileID: 942194942, guid: e6ac819405bd9404797d3e9950282f5b, type: 3}
+  - {fileID: 942194942, guid: e6ac819405bd9404797d3e9950282f5b, type: 3}
+  - {fileID: 942194942, guid: e6ac819405bd9404797d3e9950282f5b, type: 3}

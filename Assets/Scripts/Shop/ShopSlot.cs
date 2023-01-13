@@ -13,6 +13,7 @@ public class ShopSlot : MonoBehaviour
     InventoryManager myInventoryManager;
     GoldManager myGoldManager;
     ShopManager myShopManager;
+    NotificationManager myNotificationManager;
 
     public int priceOfItem = 10;
     public TMP_Text priceDisplay;
@@ -22,6 +23,7 @@ public class ShopSlot : MonoBehaviour
         myInventoryManager = InventoryManager.Instance;
         myGoldManager = GoldManager.Instance;
         myShopManager = ShopManager.Instance;
+        myNotificationManager = NotificationManager.Instance;
         //priceDisplay.text = item.goldValue.ToString();
         //icon.sprite = item.icon;
     }
@@ -36,7 +38,7 @@ public class ShopSlot : MonoBehaviour
 
     public void AttemptBuy()
     {
-        if(!myShopManager.confirmPurchase.gameObject.activeSelf)
+        if(!myShopManager.confirmPanel.gameObject.activeSelf)
             myShopManager.ConfirmBuy(item, this);
     }
 
@@ -45,18 +47,17 @@ public class ShopSlot : MonoBehaviour
         //Check if there is inventory space
         if (myInventoryManager.items.Count >= myInventoryManager.inventorySpace)
         {
-            Debug.Log("Not enough space.");
+            myNotificationManager.ShowNotification("Not enough space in your inventory!", Color.red);
             return;
         }
 
         //Check if player has enough gold
         if (!myGoldManager.SubGold(priceOfItem))
         {
-            Debug.Log("Not enough Gold.");
+            myNotificationManager.ShowNotification("Not enough gold!", Color.red);
             return;
         }
 
         myInventoryManager.Add(item);
-        Debug.Log("You bought a " + item.name + "!");
     }
 }
