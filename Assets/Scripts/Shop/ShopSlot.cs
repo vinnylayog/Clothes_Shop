@@ -31,11 +31,13 @@ public class ShopSlot : MonoBehaviour
         item = newItem;
         icon.sprite = item.icon;
         priceOfItem = item.goldValue;
+        priceDisplay.text = priceOfItem.ToString();
     }
 
     public void AttemptBuy()
     {
-        myShopManager.ConfirmBuy(item, this);
+        if(!myShopManager.confirmPurchase.gameObject.activeSelf)
+            myShopManager.ConfirmBuy(item, this);
     }
 
     public void BuyItem()

@@ -4,7 +4,12 @@ using TMPro;
 public class ConfirmPurchase : MonoBehaviour
 {
     public TMP_Text ConfirmText;
-    private ShopSlot targetPurchase;
+    public ShopSlot targetPurchase;
+
+    private void Start()
+    {
+        gameObject.SetActive(false);
+    }
 
     public void Confirm()
     {
@@ -14,6 +19,7 @@ public class ConfirmPurchase : MonoBehaviour
 
     public void Close()
     {
+        targetPurchase = null;
         gameObject.SetActive(false);
         ConfirmText.text = " ";
     }

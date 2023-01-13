@@ -36,15 +36,19 @@ public class ShopManager : MonoBehaviour
     {
         foreach (Item item in shopItems)
         {
-            ShopSlot newShopSlot = Instantiate(ShopSlotPrefab).GetComponent<ShopSlot>();
-            newShopSlot.transform.SetParent(ShopParent);
-            newShopSlot.transform.localScale = Vector3.one;
-            newShopSlot.SetUpSlot(item);
+            if (item != null)
+            {
+                Debug.Log("Adding " + item.name + " to shop.");
+                ShopSlot newShopSlot = Instantiate(ShopSlotPrefab).GetComponent<ShopSlot>();
+                newShopSlot.transform.SetParent(ShopParent, false);
+                newShopSlot.SetUpSlot(item);
+            }
         }
     }
 
     public void ConfirmBuy(Item item, ShopSlot shopSlot)
     {
+        confirmPurchase.targetPurchase = shopSlot;
         confirmPurchase.ConfirmText.text = "Buy " + item.name + " for " + item.goldValue + " Gold?";
         confirmPurchase.gameObject.SetActive(true);
     }

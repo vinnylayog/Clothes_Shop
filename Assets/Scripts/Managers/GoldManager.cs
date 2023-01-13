@@ -17,7 +17,12 @@ public class GoldManager : MonoBehaviour
     public TMP_Text goldDisplay;
 
     [SerializeField]
-    private int playerGold;
+    private int playerGold = 100;
+
+    private void Start()
+    {
+        UpdateGoldDisplay();
+    }
 
     public void AddGold(int addGold)
     {
