@@ -13,6 +13,7 @@ public class CameraTarget : MonoBehaviour
 
     private Vector3 velocity = Vector3.zero;
 
+    //Camera follows the player with smooth damping
     private void FixedUpdate()
     {
         Vector3 movePosition = myTarget.position + offset;

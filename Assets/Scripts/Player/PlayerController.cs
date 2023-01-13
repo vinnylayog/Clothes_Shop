@@ -16,11 +16,6 @@ public class PlayerController : MonoBehaviour
 
     public Direction facing = 0;
 
-    private void Start()
-    {
-    }
-
-    // Update is called once per frame
     void Update()
     {
         HandleMovement();
@@ -33,14 +28,15 @@ public class PlayerController : MonoBehaviour
         HandleAnimation();
     }
 
+    //Move player based on Input (WASD or Arrow Keys)
     private void HandleMovement()
     {
-        //Move player based on Input
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         movement.Normalize();
     }
 
+    //Reads where the player is facing and updates the Animator
     void HandleAnimation()
     {
         if (movement.x > 0.0f)
@@ -54,6 +50,7 @@ public class PlayerController : MonoBehaviour
             facing = Direction.Left;
         }
 
+        //Up and Down directions override left and right
         if (movement.y > 0.0f)
         {
             playerSpriteRenderer.flipX = false;
@@ -65,6 +62,7 @@ public class PlayerController : MonoBehaviour
             facing = Direction.Down;
         }
 
+        //If player lets go of input, character is set to idle
         if (movement == Vector2.zero)
         {
             switch (facing)
@@ -90,8 +88,10 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        //Plays the animation
         myAnimator.Play(animationNames[(int)facing]);
 
+        //Sends data to the Equipment Manager to handle direction of equipment sprites
         int direction = (int)facing;
         if (direction > 3) direction -= 4;
         EquipmentManager.Instance.UpdateFacing(direction);

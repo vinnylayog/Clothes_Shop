@@ -17,6 +17,8 @@ public class NotificationManager : MonoBehaviour
     public Animator notifAnim;
     public TMP_Text notifText;
 
+    //Other scripts can call this function to show a generic notification
+    //Plays an animation of text displaying and fading out after 0.35 seconds
     public void ShowNotification(string newText, Color color)
     {
         notifText.text = newText;

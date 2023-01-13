@@ -25,6 +25,7 @@ public class InventorySlot : MonoBehaviour
         myNotificationManager = NotificationManager.Instance;
     }
 
+    //Adds Item data to Slot
     public void AddItem(Item newItem)
     {
         item = newItem;
@@ -36,6 +37,7 @@ public class InventorySlot : MonoBehaviour
         removeButton.interactable = true;
     }
 
+    //Removes Item data from Slot
     public void ClearSlot()
     {
         item = null;
@@ -48,6 +50,7 @@ public class InventorySlot : MonoBehaviour
         removeButton.interactable = false;
     }
 
+    //Removes Item from Inventory
     public void OnRemoveButton()
     {
         myInventoryManager.Remove(item, true);

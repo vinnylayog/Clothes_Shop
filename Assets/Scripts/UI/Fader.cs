@@ -18,6 +18,7 @@ public class Fader : MonoBehaviour
         myAnimator = GetComponent<Animator>();
     }
 
+    //Fades to or from black depending on bool
     public void FadeToBlack(bool fade)
     {
         if(fade)

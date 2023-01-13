@@ -6,15 +6,14 @@ public class SpriteYAligner : MonoBehaviour
 {
     private SpriteRenderer mySpriteRenderer;
 
-    // Start is called before the first frame update
     void Start()
     {
         mySpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //Adjusts the Z position / Order in Layer based on it's Y position
         transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y - (mySpriteRenderer.bounds.size.y/2));
     }
 }

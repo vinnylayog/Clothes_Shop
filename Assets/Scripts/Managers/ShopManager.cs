@@ -32,6 +32,8 @@ public class ShopManager : MonoBehaviour
         InitializeShop();
     }
 
+    //On load, reads the ShopItems list and spawns a ShopSlot for each item in the List
+    //Assigns item data to each slot
     private void InitializeShop()
     {
         foreach (Item item in shopItems)
@@ -45,6 +47,7 @@ public class ShopManager : MonoBehaviour
         }
     }
 
+    //Pulls up and updates the Confirmation Panel with Sell Information
     public void ConfirmSell(Item item, InventorySlot inventorySlot)
     {
         confirmPanel.targetSell = inventorySlot;
@@ -53,6 +56,7 @@ public class ShopManager : MonoBehaviour
         confirmPanel.gameObject.SetActive(true);
     }
 
+    //Pulls up and updates the Confirmation Panel with Buy Information
     public void ConfirmBuy(Item item, ShopSlot shopSlot)
     {
         confirmPanel.targetPurchase = shopSlot;
@@ -61,6 +65,9 @@ public class ShopManager : MonoBehaviour
         confirmPanel.gameObject.SetActive(true);
     }
 
+    //Opens the Shop if it's closed.
+    //Closes the Shop if it's open.
+    //Syncs with Inventory Panel
     public void OpenCloseShop()
     {
         ShopPanel.SetActive(!ShopPanel.activeSelf);

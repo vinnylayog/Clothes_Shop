@@ -9,6 +9,7 @@ public class Equipment : Item
 
     public Sprite[] sides;
 
+    //Equips item and removes it from Player's inventory
     public override void Use()
     {
         base.Use();

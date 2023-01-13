@@ -13,6 +13,7 @@ public class ItemPickup : Interactable
         myInventoryManager = InventoryManager.Instance;
         myNotificationManager = NotificationManager.Instance;
 
+        //If Item already has an Assigned Item, load data
         if (item != null) OnSpawn(item);
     }
 
@@ -23,6 +24,7 @@ public class ItemPickup : Interactable
         PickUp();
     }
 
+    //Add Item to inventory and destroy item in the overworld
     void PickUp()
     {
         bool wasPickedUp = myInventoryManager.Add(item);
@@ -34,6 +36,7 @@ public class ItemPickup : Interactable
         }
     }
 
+    //On Item's creation in the overworld, assign sprite and name data
     public void OnSpawn(Item newItem)
     {
         item = newItem;

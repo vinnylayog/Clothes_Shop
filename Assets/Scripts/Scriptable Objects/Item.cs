@@ -18,6 +18,7 @@ public class Item : ScriptableObject
         //Debug.Log("Using " + name);
     }
 
+    //Removes the item from the Player's Inventory
     public void RemoveFromInventory()
     {
         InventoryManager.Instance.Remove(this, false);

@@ -24,10 +24,9 @@ public class ShopSlot : MonoBehaviour
         myGoldManager = GoldManager.Instance;
         myShopManager = ShopManager.Instance;
         myNotificationManager = NotificationManager.Instance;
-        //priceDisplay.text = item.goldValue.ToString();
-        //icon.sprite = item.icon;
     }
 
+    //Assigns Item data to the slot
     public void SetUpSlot(Item newItem)
     {
         item = newItem;
@@ -36,13 +35,14 @@ public class ShopSlot : MonoBehaviour
         priceDisplay.text = priceOfItem.ToString();
     }
 
+    //Pulls up Confirmation Window to make sure player wants to buy the item
     public void AttemptBuy()
     {
-        print("Attempting to buy");
         if(!myShopManager.confirmPanel.gameObject.activeSelf)
             myShopManager.ConfirmBuy(item, this);
     }
 
+    //After confirmation, checks if player can buy the item
     public void BuyItem()
     {
         //Check if there is inventory space
@@ -59,6 +59,7 @@ public class ShopSlot : MonoBehaviour
             return;
         }
 
+        //Notifies and adds the item to player's inventory
         myNotificationManager.ShowNotification("You bought a " + item.name + ".", Color.red);
         myInventoryManager.Add(item);
     }

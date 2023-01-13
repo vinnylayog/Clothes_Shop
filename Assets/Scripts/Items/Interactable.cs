@@ -1,3 +1,4 @@
+using UnityEditor.U2D.Path.GUIFramework;
 using UnityEngine;
 
 public class Interactable : MonoBehaviour
@@ -7,6 +8,7 @@ public class Interactable : MonoBehaviour
 
     GameObject player;
 
+    //On Left Click, Item will be Interacted with if Player is within the radius from item
     private void OnMouseDown()
     {
         if(player == null)
@@ -18,12 +20,15 @@ public class Interactable : MonoBehaviour
         }
     }
 
+    //Draw a Sphere for Editor Visualization of radius
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, radius);
     }
 
+
+    //Generic Interact function
     public virtual void Interact()
     {
         //Debug.Log("Interacting with " + gameObject.name);

@@ -16,7 +16,7 @@ MonoBehaviour:
   icon: {fileID: 942194942, guid: e6ac819405bd9404797d3e9950282f5b, type: 3}
   isDefaultItem: 0
   OverworldDimensions: {x: 0, y: 0}
-  goldValue: 10
+  goldValue: 100
   equipIndex: 0
   moveSpeedModifier: 1
   sides:

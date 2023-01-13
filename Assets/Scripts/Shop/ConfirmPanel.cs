@@ -13,6 +13,7 @@ public class ConfirmPanel : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    //Confirms purchase or sale of item
     public void Confirm()
     {
         if (buyOrSell == TransactionType.Buy)
@@ -27,6 +28,7 @@ public class ConfirmPanel : MonoBehaviour
         Close();
     }
 
+    //Closes the Confirmation window and clears data
     public void Close()
     {
         targetPurchase = null;
