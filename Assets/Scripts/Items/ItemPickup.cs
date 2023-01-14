@@ -31,7 +31,7 @@ public class ItemPickup : Interactable
 
         if (wasPickedUp)
         {
-            if (!item.isDefaultItem) myNotificationManager.ShowNotification("You picked up a " + item.name + ".", Color.white);
+            if (!item.isDefaultItem) myNotificationManager.ShowNotification("You picked up a " + item.name + ".", Color.white, 2);
             Destroy(gameObject);
         }
     }

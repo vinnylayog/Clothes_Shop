@@ -46,7 +46,7 @@ public class InventoryManager : MonoBehaviour
             //Check if the Inventory is full
             if (items.Count >= inventorySpace)
             {
-                myNotificationManager.ShowNotification("Not enough space in your inventory!", Color.red);
+                myNotificationManager.ShowNotification("Not enough space in your inventory!", Color.red, 1);
                 return false;
             }
 

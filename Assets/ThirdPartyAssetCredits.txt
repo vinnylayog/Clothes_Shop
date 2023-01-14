@@ -1,0 +1,39 @@
+Sprites:
+
+Menu and Button UI - 2D Casual UI
+
+Character and Background Sprites - Pinneaple Dev
+
+Music:
+
+On My Way
+
+"On My Way" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+
+Daily Beetle
+
+"Daily Beetle" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+
+Adventures in Adventureland
+
+"Adventures in Adventureland" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+
+Sound Effects:
+
+Coin Pickup by combine2005
+
+https://freesound.org/people/combine2005/sounds/456693/
+
+ding by ammaro
+
+https://freesound.org/people/ammaro/sounds/573381/
+
+Beep Buzz by edwardszakal
+
+https://freesound.org/people/edwardszakal/sounds/514153/

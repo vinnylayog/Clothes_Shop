@@ -78,7 +78,7 @@ public class InventorySlot : MonoBehaviour
     {
         //Adds gold to the Player's wallet equivalent to the Item's Gold Value * The Shop sell multiplier
         int sellValue = (int)(item.goldValue * myShopManager.SellValueMultiplier);
-        myNotificationManager.ShowNotification("You sold " + item.name + " for " + sellValue.ToString() + " Gold.", Color.white);
+        myNotificationManager.ShowNotification("You sold " + item.name + " for " + sellValue.ToString() + " Gold.", Color.white, 0);
         myGoldmanager.AddGold(sellValue);
 
         //Removes the item from the Player's Inventory

@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     public GameObject ActorsParent;
     public GameObject EnvironmentParent;
 
+    AudioManager myAudioManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,8 @@ public class GameManager : MonoBehaviour
         {
             Player = GameObject.FindGameObjectWithTag("Player");
         }
+
+        myAudioManager = AudioManager.Instance;
 
         StartCoroutine(DelayLoading());
     }
@@ -41,5 +45,6 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(loadDelay);
 
         Fader.Instance.FadeToBlack(false);
+        myAudioManager.PlayStartBGM();
     }
 }

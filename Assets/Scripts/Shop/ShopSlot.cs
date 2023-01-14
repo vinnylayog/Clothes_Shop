@@ -48,19 +48,19 @@ public class ShopSlot : MonoBehaviour
         //Check if there is inventory space
         if (myInventoryManager.items.Count >= myInventoryManager.inventorySpace)
         {
-            myNotificationManager.ShowNotification("Not enough space in your inventory!", Color.red);
+            myNotificationManager.ShowNotification("Not enough space in your inventory!", Color.red, 1);
             return;
         }
 
         //Check if player has enough gold
         if (!myGoldManager.SubGold(priceOfItem))
         {
-            myNotificationManager.ShowNotification("Not enough gold!", Color.red);
+            myNotificationManager.ShowNotification("Not enough gold!", Color.red, 1);
             return;
         }
 
         //Notifies and adds the item to player's inventory
-        myNotificationManager.ShowNotification("You bought a " + item.name + ".", Color.red);
+        myNotificationManager.ShowNotification("You bought a " + item.name + ".", Color.red, 2);
         myInventoryManager.Add(item);
     }
 }
