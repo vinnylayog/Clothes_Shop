@@ -9,6 +9,9 @@ public class Equipment : Item
 
     public Sprite[] sides;
 
+    public Vector3 equippedPositionOffset;
+    public Vector3 equippedScaleOffset;
+
     //Equips item and removes it from Player's inventory
     public override void Use()
     {

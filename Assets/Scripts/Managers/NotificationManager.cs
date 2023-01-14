@@ -36,6 +36,6 @@ public class NotificationManager : MonoBehaviour
         myAudioManager.PlaySFX(notificationSounds[sfxID]);
         notifText.text = newText;
         notifText.color = color;
-        notifAnim.Play("FadeOut");
+        notifAnim.Play("Default");
     }
 }

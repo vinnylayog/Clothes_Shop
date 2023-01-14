@@ -68,6 +68,8 @@ public class EquipmentManager : MonoBehaviour
         currentEquipment[slotIndex] = newItem;
         equipmentSlots[slotIndex].AddEquip(newItem);
         equippedSprite[slotIndex].equipSpriteRenderer.sprite = currentEquipment[slotIndex].sides[direction];
+        equippedSprite[slotIndex].gameObject.transform.localPosition = newItem.equippedPositionOffset;
+        equippedSprite[slotIndex].gameObject.transform.localScale = newItem.equippedScaleOffset;
     }
 
     //Unequips the item at the specified slot

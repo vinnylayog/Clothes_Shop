@@ -17,6 +17,10 @@ MonoBehaviour:
   isDefaultItem: 0
   OverworldDimensions: {x: 0, y: 0}
   goldValue: 10
+  overworldPositionOffset: {x: 0, y: 0, z: 0}
+  overworldScaleOffset: {x: 1, y: 1, z: 1}
   equipIndex: 0
   moveSpeedModifier: 1
   sides: []
+  equippedPositionOffset: {x: 0, y: 0, z: 0}
+  equippedScaleOffset: {x: 0, y: 0, z: 0}

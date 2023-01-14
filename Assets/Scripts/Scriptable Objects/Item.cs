@@ -11,6 +11,9 @@ public class Item : ScriptableObject
 
     public int goldValue = 10;
 
+    public Vector3 overworldPositionOffset;
+    public Vector3 overworldScaleOffset;
+
     public virtual void Use()
     {
         // Use the item

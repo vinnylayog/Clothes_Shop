@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0e05129c03375e94ab1b759f817bf509
+guid: 6d43dd12a99dd034e895826e5e095928
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,85 +104,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wizard_hat_only_0
+      name: red_wizard_hat_0
       rect:
         serializedVersion: 2
-        x: 74
-        y: 663
-        width: 377
-        height: 242
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 73
+        y: 662
+        width: 379
+        height: 245
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63ef79217c38fcd429cca4b778e01a21
-      internalID: 1132678348
+      spriteID: 65678278d724e9b48ad3e09c05791aa5
+      internalID: 1797754867
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wizard_hat_only_1
+      name: red_wizard_hat_1
       rect:
         serializedVersion: 2
-        x: 618
-        y: 671
-        width: 366
-        height: 234
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b0879368d5cede44ab52d3c151cb9b06
-      internalID: 213843013
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: wizard_hat_only_2
-      rect:
-        serializedVersion: 2
-        x: 91
-        y: 156
-        width: 358
+        x: 616
+        y: 670
+        width: 369
         height: 237
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3b973db0e42ab648a5a0f57792d261f
-      internalID: -383004461
+      spriteID: 4c196f9b0c1ab854d8c774e773f836e5
+      internalID: -519245918
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wizard_hat_only_3
+      name: red_wizard_hat_2
       rect:
         serializedVersion: 2
-        x: 575
-        y: 154
-        width: 377
-        height: 240
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 90
+        y: 155
+        width: 359
+        height: 238
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33d0404e31e66874497eb673e5a348ad
-      internalID: -1484626562
+      spriteID: 0778cfeca6ed75d41b7d85360ef61cdb
+      internalID: -214411225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red_wizard_hat_3
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 151
+        width: 379
+        height: 245
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebe43770376c82a4db58d1cc1a9aaffb
+      internalID: -133670051
       vertices: []
       indices: 
       edges: []
@@ -198,10 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wizard_hat_only_0: 1132678348
-      wizard_hat_only_3: -1484626562
-      wizard_hat_only_1: 213843013
-      wizard_hat_only_2: -383004461
+      red_wizard_hat_3: -133670051
+      red_wizard_hat_1: -519245918
+      red_wizard_hat_0: 1797754867
+      red_wizard_hat_2: -214411225
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

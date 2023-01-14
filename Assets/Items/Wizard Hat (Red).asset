@@ -16,6 +16,9 @@ MonoBehaviour:
   icon: {fileID: -519245918, guid: 6d43dd12a99dd034e895826e5e095928, type: 3}
   isDefaultItem: 0
   OverworldDimensions: {x: 0, y: 0}
+  goldValue: 10
+  overworldPositionOffset: {x: 0, y: 0, z: 0}
+  overworldScaleOffset: {x: 1, y: 1, z: 1}
   equipIndex: 0
   moveSpeedModifier: 1
   sides:
@@ -23,3 +26,5 @@ MonoBehaviour:
   - {fileID: -214411225, guid: 6d43dd12a99dd034e895826e5e095928, type: 3}
   - {fileID: -133670051, guid: 6d43dd12a99dd034e895826e5e095928, type: 3}
   - {fileID: 1797754867, guid: 6d43dd12a99dd034e895826e5e095928, type: 3}
+  equippedPositionOffset: {x: 0, y: 1.14, z: 0}
+  equippedScaleOffset: {x: 1.5, y: 1.5, z: 1}

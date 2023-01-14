@@ -60,7 +60,7 @@ public class ShopSlot : MonoBehaviour
         }
 
         //Notifies and adds the item to player's inventory
-        myNotificationManager.ShowNotification("You bought a " + item.name + ".", Color.red, 2);
+        myNotificationManager.ShowNotification("You bought a " + item.name + ".", Color.white, 2);
         myInventoryManager.Add(item);
     }
 }

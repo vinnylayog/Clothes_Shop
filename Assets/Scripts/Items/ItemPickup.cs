@@ -42,5 +42,7 @@ public class ItemPickup : Interactable
         item = newItem;
         mySpriteRenderer.sprite = item.icon;
         gameObject.name = item.name;
+        mySpriteRenderer.transform.localPosition = newItem.overworldPositionOffset;
+        mySpriteRenderer.transform.localScale = newItem.overworldScaleOffset;
     }
 }
