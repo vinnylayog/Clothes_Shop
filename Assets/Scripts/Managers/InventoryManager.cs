@@ -37,6 +37,11 @@ public class InventoryManager : MonoBehaviour
         myNotificationManager = NotificationManager.Instance;
     }
 
+    public void CloseInventory()
+    {
+        myInventoryUI.CloseInventory();
+    }
+
     //Add Item to Inventory List
     public bool Add(Item item)
     {

@@ -8,21 +8,24 @@ public class InventoryUI : MonoBehaviour
 
     InventoryManager myInventoryManager;
     ShopManager myShopManager;
+    AudioManager myAudioManager;
 
     InventorySlot[] slots;
+
+    public AudioClip pageSound;
 
     void Start()
     {
         myInventoryManager = InventoryManager.Instance;
         myShopManager = ShopManager.Instance;
+        myAudioManager = AudioManager.Instance;
 
         //Listens to changes made to List of Inventory Items
         myInventoryManager.onItemChangedCallback += UpdateUI;
 
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
 
-        inventoryUI.SetActive(true);
-        inventoryUI.SetActive(false);
+        //inventoryUI.SetActive(false);
     }
 
     void Update()
@@ -39,12 +42,14 @@ public class InventoryUI : MonoBehaviour
     public void OpenCloseInventory()
     {
         inventoryUI.SetActive(!inventoryUI.activeSelf);
+        myAudioManager.PlaySFX(pageSound);
     }
 
     //Opens and Closes Inventory simultaneously with Shop Menu
     public void OpenCloseInventory(bool open)
     {
         inventoryUI.SetActive(open);
+        myAudioManager.PlaySFX(pageSound);
 
         //If Shop Menu is open, Items in Inventory display their Sell Price
         foreach (InventorySlot slot in slots)
@@ -52,6 +57,12 @@ public class InventoryUI : MonoBehaviour
             if(slot.item != null)
                 slot.sellPriceBox.SetActive(open);
         }
+    }
+
+    public void CloseInventory()
+    {
+        inventoryUI.SetActive(false);
+        myAudioManager.PlaySFX(pageSound);
     }
 
     //Updates the Inventory Display if an item is added or removed from Inventory

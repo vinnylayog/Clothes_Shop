@@ -34,6 +34,8 @@ public class InventorySlot : MonoBehaviour
         icon.enabled = true;
         sellPrice.text = ((int)(item.goldValue * myShopManager.SellValueMultiplier)).ToString();
 
+        if (myShopManager.ShopPanel.gameObject.activeSelf) sellPriceBox.SetActive(true);
+
         removeButton.interactable = true;
     }
 
@@ -80,6 +82,9 @@ public class InventorySlot : MonoBehaviour
         int sellValue = (int)(item.goldValue * myShopManager.SellValueMultiplier);
         myNotificationManager.ShowNotification("You sold " + item.name + " for " + sellValue.ToString() + " Gold.", Color.white, 0);
         myGoldmanager.AddGold(sellValue);
+
+        myShopManager.shopItems.Add(item);
+        myShopManager.RefreshShopDisplay();
 
         //Removes the item from the Player's Inventory
         myInventoryManager.Remove(item, false);

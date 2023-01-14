@@ -35,7 +35,7 @@ public class GoldManager : MonoBehaviour
     {
         if((playerGold - subGold) < 0)
         {
-            Debug.Log("Not enough Gold.");
+            //Debug.Log("Not enough Gold.");
             return false;
         }
 

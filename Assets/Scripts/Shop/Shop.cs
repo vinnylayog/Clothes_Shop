@@ -9,6 +9,7 @@ public class Shop : Interactable
     {
         base.Interact();
 
-        ShopManager.Instance.OpenCloseShop();
+        if(!ShopManager.Instance.ShopPanel.activeSelf)
+            ShopManager.Instance.OpenCloseShop();
     }
 }

@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Fader : MonoBehaviour
@@ -13,9 +15,13 @@ public class Fader : MonoBehaviour
 
     Animator myAnimator;
 
+    public float loadDelay;
+
     private void Start()
     {
         myAnimator = GetComponent<Animator>();
+
+        StartCoroutine(DelayLoading());
     }
 
     //Fades to or from black depending on bool
@@ -25,5 +31,13 @@ public class Fader : MonoBehaviour
             myAnimator.Play("FadeToBlack");
         else
             myAnimator.Play("FadeFromBlack");
+    }
+
+    //Delay display of game scene to give a bit of time for loading assets, menus, etc
+    IEnumerator DelayLoading()
+    {
+        yield return new WaitForSeconds(loadDelay);
+
+        Fader.Instance.FadeToBlack(false);
     }
 }

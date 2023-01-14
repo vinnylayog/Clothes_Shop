@@ -17,7 +17,7 @@ MonoBehaviour:
   isDefaultItem: 0
   OverworldDimensions: {x: 0, y: 0}
   goldValue: 10
-  overworldPositionOffset: {x: 0, y: 0, z: 0}
+  overworldPositionOffset: {x: 0, y: -0.9, z: 0}
   overworldScaleOffset: {x: 1, y: 1, z: 1}
   equipIndex: 0
   moveSpeedModifier: 2
@@ -26,5 +26,5 @@ MonoBehaviour:
   - {fileID: 1274052360, guid: b477f4eb2522fb34f9c4497895601ea3, type: 3}
   - {fileID: -828347866, guid: b477f4eb2522fb34f9c4497895601ea3, type: 3}
   - {fileID: 1992603961, guid: b477f4eb2522fb34f9c4497895601ea3, type: 3}
-  equippedPositionOffset: {x: 0, y: 1.14, z: 0}
+  equippedPositionOffset: {x: 0, y: -0.01, z: 0}
   equippedScaleOffset: {x: 1.5, y: 1.5, z: 1}

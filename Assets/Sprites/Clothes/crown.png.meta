@@ -111,8 +111,8 @@ TextureImporter:
         y: 676
         width: 364
         height: 229
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: -1.45}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -132,8 +132,8 @@ TextureImporter:
         y: 670
         width: 364
         height: 229
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.52, y: -1.45}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -149,12 +149,12 @@ TextureImporter:
       name: crown_2
       rect:
         serializedVersion: 2
-        x: 58
-        y: 177
+        x: 57
+        y: 179
         width: 380
         height: 316
       alignment: 9
-      pivot: {x: 0.7, y: 0.2}
+      pivot: {x: 0.7, y: -0.85}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -170,12 +170,12 @@ TextureImporter:
       name: crown_3
       rect:
         serializedVersion: 2
-        x: 555
-        y: 177
+        x: 554
+        y: 176
         width: 380
         height: 316
       alignment: 9
-      pivot: {x: 0.3, y: 0.2}
+      pivot: {x: 0.3, y: -0.85}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

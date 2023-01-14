@@ -73,4 +73,31 @@ public class ShopManager : MonoBehaviour
         ShopPanel.SetActive(!ShopPanel.activeSelf);
         myInventoryManager.myInventoryUI.OpenCloseInventory(ShopPanel.activeSelf);
     }
+
+    public void CloseShop()
+    {
+        ShopPanel.SetActive(false);
+        confirmPanel.Close();
+        myInventoryManager.CloseInventory();
+    }
+
+    public void RefreshShopDisplay()
+    {
+        List<GameObject> childrenList = new List<GameObject>();
+
+        for (int i = 0; i < ShopParent.childCount; i++)
+        {
+            Destroy(ShopParent.GetChild(i).gameObject);
+        }
+
+        foreach (Item item in shopItems)
+        {
+            if (item != null)
+            {
+                ShopSlot newShopSlot = Instantiate(ShopSlotPrefab).GetComponent<ShopSlot>();
+                newShopSlot.transform.SetParent(ShopParent, false);
+                newShopSlot.SetUpSlot(item);
+            }
+        }
+    }
 }

@@ -19,6 +19,11 @@ public class AudioManager : MonoBehaviour
 
     public List<AudioClip> BGMList = new List<AudioClip>();
 
+    private void Start()
+    {
+        PlayStartBGM();
+    }
+
     public void PlayStartBGM()
     {
         StartCoroutine(playBGM());

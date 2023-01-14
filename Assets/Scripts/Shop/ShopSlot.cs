@@ -38,6 +38,8 @@ public class ShopSlot : MonoBehaviour
     //Pulls up Confirmation Window to make sure player wants to buy the item
     public void AttemptBuy()
     {
+        Debug.Log("ButtonPressed.");
+
         if(!myShopManager.confirmPanel.gameObject.activeSelf)
             myShopManager.ConfirmBuy(item, this);
     }
@@ -62,5 +64,7 @@ public class ShopSlot : MonoBehaviour
         //Notifies and adds the item to player's inventory
         myNotificationManager.ShowNotification("You bought a " + item.name + ".", Color.white, 2);
         myInventoryManager.Add(item);
+        myShopManager.shopItems.Remove(item);
+        myShopManager.RefreshShopDisplay();
     }
 }

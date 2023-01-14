@@ -13,8 +13,6 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    public float loadDelay;
-
     //Give other scripts easy access to Player object
     public GameObject Player;
 
@@ -26,6 +24,8 @@ public class GameManager : MonoBehaviour
 
     AudioManager myAudioManager;
 
+    public GameObject PauseMenu;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,16 +35,20 @@ public class GameManager : MonoBehaviour
         }
 
         myAudioManager = AudioManager.Instance;
-
-        StartCoroutine(DelayLoading());
     }
 
-    //Delay display of game scene to give a bit of time for loading assets, menus, etc
-    IEnumerator DelayLoading()
+    private void Update()
     {
-        yield return new WaitForSeconds(loadDelay);
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            OpenClosePauseMenu();
+            ShopManager.Instance.CloseShop();
+            InventoryManager.Instance.CloseInventory();
+        }
+    }
 
-        Fader.Instance.FadeToBlack(false);
-        myAudioManager.PlayStartBGM();
+    public void OpenClosePauseMenu()
+    {
+        PauseMenu.SetActive(!PauseMenu.activeSelf);
     }
 }
