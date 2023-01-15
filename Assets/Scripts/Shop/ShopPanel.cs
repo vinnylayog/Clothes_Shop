@@ -17,7 +17,7 @@ public class ShopPanel : MonoBehaviour
     void Update()
     {
         //If Player is too far from NPC, the Shop Panel closes
-        if (Vector2.Distance(Player.position, ShopNPC.position) > 3.0f)
+        if (Vector2.Distance(Player.position, ShopNPC.position) > 2.5f)
         {
             ShopManager.Instance.OpenCloseShop();
             ShopManager.Instance.confirmPanel.Close();

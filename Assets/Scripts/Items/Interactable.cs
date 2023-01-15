@@ -2,10 +2,9 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    [SerializeField]
-    private float radius = 3.0f;
+    public float radius = 3.0f;
 
-    GameObject player;
+    internal GameObject player;
 
     //On Left Click, Item will be Interacted with if Player is within the radius from item
     private void OnMouseDown()
